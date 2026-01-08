@@ -1,0 +1,14 @@
+diff --git a/tools/checkpoint/convert.py b/tools/checkpoint/convert.py
+index e9eb7e99b..11a8b381f 100644
+--- a/tools/checkpoint/convert.py
++++ b/tools/checkpoint/convert.py
+@@ -107,6 +107,9 @@ def load_plugin(plugin_type, name):
+     return plugin
+
+ def main():
++    import torch
++    torch.multiprocessing.set_start_method('spawn')
++
+     import argparse
+     parser = argparse.ArgumentParser(description="Megatron Checkpoint Converter Arguments",
+                                      allow_abbrev=False, conflict_handler='resolve')

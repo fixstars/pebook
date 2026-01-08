@@ -1,0 +1,24 @@
+services:
+  work:
+    build:
+      context: .
+      args:
+        - UID=${UID:?} # UID=$(id -u)
+        - GID=${GID:?} # GID=$(id -g)
+        - USERNAME=${USER:?}
+    image: rnagata/bev_fusion:071912
+    volumes:
+      - .:/ch8
+      - ../../:/tp
+    ipc: host
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 8
+              capabilities: [gpu]
+    cap_add:
+      - SYS_ADMIN
+

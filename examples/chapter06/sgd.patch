@@ -1,0 +1,20 @@
+diff --git a/megatron/core/optimizer/__init__.py b/megatron/core/optimizer/__init__.py
+index 2608fde8e..a6fe6ae0e 100644
+--- a/megatron/core/optimizer/__init__.py
++++ b/megatron/core/optimizer/__init__.py
+@@ -362,11 +362,13 @@ def _get_megatron_optimizer_based_on_param_groups(
+                                 opt.initialize_state(p)
+
+         elif config.optimizer == 'sgd':
+-            optimizer = SGD(
++            from sgd_sai import SGD_sai
++            optimizer = SGD_sai(
+                 param_groups,
+                 lr=config.lr,
+-                weight_decay=config.weight_decay,
+                 momentum=config.sgd_momentum,
++                weight_decay=config.weight_decay,
++                eps=1e-8
+             )
+             init_state_fn = None
+         else:

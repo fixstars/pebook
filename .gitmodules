@@ -1,0 +1,4 @@
+[submodule "chapter08/src/mmdetection3d"]
+	path = examples/chapter07/mmdetection3d
+	url = https://github.com/open-mmlab/mmdetection3d.git
+	branch = v1.4.0
