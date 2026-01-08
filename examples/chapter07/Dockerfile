@@ -6,10 +6,10 @@ RUN \
   apt-get update && apt-get upgrade -y && \
   apt-get install wget -yq && \
   apt-get install -y \
-     build-essential g++ gcc \
-     libgl1-mesa-dev libglib2.0-0 \
-     openmpi-bin openmpi-common libopenmpi-dev libgtk2.0-dev git\
-     cmake ninja-build
+  build-essential g++ gcc \
+  libgl1-mesa-dev libglib2.0-0 \
+  openmpi-bin openmpi-common libopenmpi-dev libgtk2.0-dev git\
+  cmake ninja-build
 # nsys
 RUN \
   --mount=type=cache,target=/var/lib/apt/lists \
@@ -72,20 +72,6 @@ RUN uv run pipx install ninja==1.11.1.4
 
 #install mmdet
 RUN uv run python -m mim install mmengine==0.10.6 'numpy<2'
-# # RUN git clone https://github.com/open-mmlab/mmengine.git -b v0.10.6 /work/mmdet/mmengine
-# # WORKDIR /mmdet/mmengine
-# # RUN --mount=type=cache,mode=0755,target=$HOME/.cache/pip pip install -e . -v
-
 RUN uv run python -m mim install mmcv==2.1.0 'numpy<2'
-# RUN git clone https://github.com/open-mmlab/mmcv.git -b v2.1.0 /work/mmdet/mmcv
-# WORKDIR /work/mmdet/mmcv
-# RUN bash -c "source /work/.venv/bin/activate && uv run --active setup.py develop"
-
 RUN uv run python -m mim install mmdet==3.3.0 'numpy<2'
-# # RUN git clone https://github.com/open-mmlab/mmdetection.git -b v3.3.0 /work/mmdet/mmdetection
-# # WORKDIR /work/mmdet/mmdetection
-# # RUN --mount=type=cache,mode=0755,target=$HOME/.cache/pip pip install -e . -v
-
-
-# # mmdetection3d
-# RUN uv run python -m mim install mmdet3d==1.4.0 'numpy<2' 'matplotlib<3.6.0'
+RUN uv run python -m mim install mmdet3d==1.4.0 'numpy<2'

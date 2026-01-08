@@ -1,12 +1,12 @@
 #!/bin/bash
 
+# BEVFusion への高速化コードの適用と build とインストール
+
 cd `dirname $0`
-# git submodule update -i
 source /work/.venv/bin/activate
 cd mmdetection3d
-# install mmdet3d
-bash -c "source /work/.venv/bin/activate && uv run --active setup.py build_ext && uv run --active setup.py develop"
 
+# numpy のアプデに対応
 sed -i 's/np.long/np.int64/' mmdet3d/datasets/transforms/dbsampler.py
 # H100 settings
 sed -i 's/gencode=arch=compute_70,code=sm_70/gencode=arch=compute_90,code=sm_90/' projects/BEVFusion/setup.py

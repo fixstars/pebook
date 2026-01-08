@@ -18,7 +18,6 @@ services:
           devices:
             - driver: nvidia
               count: 8
-              capabilities: [gpu]
+              capabilities: [ gpu ]
     cap_add:
       - SYS_ADMIN
-

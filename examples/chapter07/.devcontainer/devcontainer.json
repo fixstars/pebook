@@ -1,0 +1,12 @@
+{
+    "dockerComposeFile": "../compose.yml",
+    "service": "work",
+    "workspaceFolder": "/tp/chapter08/src",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python"
+            ]
+        }
+    }
+}
