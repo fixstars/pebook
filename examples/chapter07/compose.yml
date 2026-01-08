@@ -8,8 +8,7 @@ services:
         - USERNAME=${USER:?}
     image: rnagata/bev_fusion:071912
     volumes:
-      - .:/ch8
-      - ../../:/tp
+      - .:/ch7
     ipc: host
     tty: true
     deploy:
