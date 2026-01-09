@@ -26,7 +26,13 @@ name = "torch-cu128"
 url = "https://download.pytorch.org/whl/cu128"
 explicit = true
 
+[tool.uv]
+no-build-isolation-package = ["flash-attn"]
+
 [dependency-groups]
 dev = [
     "ruff>=0.13.3",
+]
+flash-attn = [
+    "flash-attn==2.8.3",
 ]

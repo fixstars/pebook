@@ -13,11 +13,12 @@
 uvをインストールした後に以下のコマンドを実行して、実行環境を作成してください。
 
 - PyTroch version: 2.8.0+cu128
-- flash_attn version: 2.5.8
+- flash attn version: 2.8.3
 
 ```shell
 cd chapter04/src
-sh sync.sh
+uv sync
+uv sync --group flash-attn
 ```
 
 ## モデルダウンロード
