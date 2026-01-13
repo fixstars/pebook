@@ -63,8 +63,8 @@ pip install -r requirements.txt
 事前に Hugging Face にログインし、Llama モデルの利用規約に同意した上で、Llama-3.2-1B をダウンロードします。
 
 ```bash
-huggingface-cli login
-huggingface-cli download meta-llama/Llama-3.2-1B
+hf auth login
+hf download meta-llama/Llama-3.2-1B
 ```
 
 ## 各節の実行方法
