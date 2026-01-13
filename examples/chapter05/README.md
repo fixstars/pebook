@@ -23,7 +23,7 @@
 
 | ファイル名 | 対応する節 | 説明 |
 |------------|------------|------|
-| `train_with_profiler.py` | 5.2節〜5.3節 | プロファイラ導入版（MemoryCallback有効） |
+| `train_with_profiler.py` | 5.3節 | プロファイラ導入版（MemoryCallback有効） |
 | `train_without_memcallback.py` | 5.5節 | MemoryCallback削除版（環境変数で制御） |
 | `optimize.py` | 5.6節 | Optunaによるハイパーパラメータ自動チューニング |
 | `run_optimize_template.sh` | 5.6節 | チューニング用スクリプトテンプレート |
@@ -104,7 +104,7 @@ PyTorch Profiler でプロファイリングする場合:
 PROFILE_TORCH=1 bash run.sh
 ```
 
-### 5.4節: MemoryCallbackの削除
+### 5.5節: MemoryCallbackの削除
 
 `run.sh` の中で呼び出すスクリプトを `train_without_memcallback.py` に変更します。
 
@@ -121,7 +121,7 @@ PROFILE_TORCH=1 bash run.sh
 PROFILE_MEM=1 bash run.sh
 ```
 
-### 5.5節: ハイパーパラメータ自動チューニング
+### 5.6節: ハイパーパラメータ自動チューニング
 
 以下のコマンドで Optuna によるハイパーパラメータ自動チューニングを実行します。
 
@@ -135,7 +135,7 @@ python optimize.py
 python analyze_study.py
 ```
 
-### 5.6節: Torch Compileの適用
+### 5.7節: Torch Compileの適用
 
 `run.sh` に以下のオプションを追加します:
 
@@ -148,7 +148,7 @@ python analyze_study.py
       --deepspeed "./configs/ds_config.json"
 ```
 
-### 5.7節: グローバルバッチサイズの調整
+### 5.8節: グローバルバッチサイズの調整
 
 `run.sh` 内の以下のパラメータを調整します:
 
