@@ -29,7 +29,7 @@ elif [ "$MODE" == "tp" ]; then
   AUTOTP_SIZE=8
   per_device_train_batch_size=$((mbs * AUTOTP_SIZE))
 else
-  echo "error '$MODE',please use 'zero' or 'tp'。"
+  echo "error '$MODE',please use 'zero' or 'tp'."
   exit 1
 fi
 TEMPLATE_FILE="configs/ds_config_temp.json"
