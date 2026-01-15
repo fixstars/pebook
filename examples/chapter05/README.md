@@ -110,7 +110,7 @@ PROFILE_TORCH=1 bash run.sh
 
 ```diff
 - deepspeed --num_gpus $num_gpus  \
--     --master_port 51336  train.py  \
+-     --master_port 51336  train_with_profiler.py  \
 + deepspeed --num_gpus $num_gpus  \
 +     --master_port 51336  train_without_memcallback.py  \
 ```
