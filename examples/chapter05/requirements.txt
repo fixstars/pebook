@@ -8,3 +8,6 @@ openai==0.28.0
 torch
 sentencepiece
 tokenizers>=0.13.3
+optuna
+kaleido<=0.2.1
+plotly
