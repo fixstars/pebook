@@ -132,7 +132,8 @@ python optimize.py
 以下のコマンドでチューニング結果を可視化します。
 
 ```bash
-python analyze_study.py
+# yyyyMMdd_HHmmss は実在するパスに合わせて変更してください
+python analyze_study.py optimize/study_yyyyMMdd_HHmmss/study.db
 ```
 
 ### 5.7節: Torch Compileの適用
