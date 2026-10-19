@@ -72,6 +72,13 @@ RUN uv run pipx install ninja==1.11.1.4
 
 #install mmdet
 RUN uv run python -m mim install mmengine==0.10.6 'numpy<2'
-RUN uv run python -m mim install mmcv==2.1.0 'numpy<2'
+
+#RUN uv run python -m mim install mmcv==2.1.0 'numpy<2'
+# TORCH_CUDA_ARCH_LIST を再設定して build
+RUN git clone https://github.com/open-mmlab/mmcv.git -b v2.1.0 /work/mmdet/mmcv
+WORKDIR /work/mmdet/mmcv
+RUN bash -c "source /work/.venv/bin/activate && uv run --active setup.py build_ext && uv run --active setup.py develop"
+WORKDIR /work
+
 RUN uv run python -m mim install mmdet==3.3.0 'numpy<2'
 RUN uv run python -m mim install mmdet3d==1.4.0 'numpy<2'
